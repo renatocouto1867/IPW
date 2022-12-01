@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Testa se é par/impar positivo/negativo!</title>
+    <style>
+        html {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.5em;
+            margin: 0%;
+            padding: 0%;
+            background-color: rgba(185, 132, 235, 0.606);
+
+        }
+
+        section {
+            width: 80%;
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            background-color: bisque;
+            padding: 10pt;
+            border: 1pt solid;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        h1 {
+
+            text-align: center;
+        }
+
+        input {
+            width: 300pt;
+            height: 50pt;
+            font-size: 1.5em;
+            text-align: center;
+            border: none;
+        }
+
+        button {
+            background: #0066A2;
+            color: white;
+            height: 60px;
+            width: 220px;
+            font-size: 1.5em;
+
+        }
+
+        div {
+            position: auto;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            padding: 5pt;
+            margin: 5pt;
+            gap: 5pt;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <h1>Verifica se o numero é positivo ou negativo e se é par o impar!</h1>
+        <div>
+            <label for="numero">Informe um Numero</label>
+            <input type="number" id="numero" name="numero" placeholder="Digite o numero aqui" required>
+            <button onclick="teste()">Testar</button>
+        </div>
+
+    </section>
+
+</body>
+<script>
+    function teste() {
+        var num = parseFloat(document.getElementById("numero").value);
+        if (num > 0) {
+            if (num % 2 == 0) {
+                alert(num + " é Positivo e par!");
+            } else { alert(num + " é positivo e impar!"); }
+
+        } else if (num < 0) {
+            if (num % 2 == 0) {
+                alert(num + " é negativo e par!");
+            } else { alert(num + " é negativo e impar!"); }
+
+        }
+
+        else alert("o numero digitado não é negativo nem positivo!");
+    }
+</script>
+
+</html>
