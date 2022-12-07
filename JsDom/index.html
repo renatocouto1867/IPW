@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Simplex</title>
+</head>
+
+<body>
+    <h1>Calculadora Simplex</h1>
+    <form action="">
+        <ul>
+            <li>
+                <label for="v1">Primeiro valor</label>
+                <input type="text" id="v1">
+            </li>
+            <li>
+                <label for="operacao">Escolha a opercação aritmética</label>
+                <select id="operacao">
+                    <option value="+">+(adição)</option>
+                    <option value="-">-(subtração)</option>
+                    <option value="*">*(multiplicação)</option>
+                    <option value="/">/(divisão)</option>
+                </select>
+                <label for="v2">Segundo valor</label>
+                <input type="text" id="v2">
+            </li>
+        </ul>
+        <button onclick="Calcular('v1','v2','operacao','saida')">Calcular</button>
+        <button onclick="limpar('v1','v2')">Limpar os valores</button>
+    </form>
+    <p id="saida"></p>
+
+</body>
+<script>
+    Function Limpar(id1, id2){
+        document.getElementById(id1).value = '';
+        document.getElementById(id2).value = '';
+        alert("tetes");
+    }
+
+    Function Calcular(n1, n2, op, saida){
+        var num1 = document.getElementById(n1).value;
+        var num2 = document.getElementById(n2).value;
+        var oper = document.getElementById(op).options[document.getElementById(operacao).selectedIndex];
+        var expressao = num1 + oper + num2;
+        resultado = eval(expressao);
+        document.getElementById(saida).innerHTML = resultado;
+
+    }
+</script>
+
+</html>
