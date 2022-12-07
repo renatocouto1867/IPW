@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora Simplex</title>
+    <script src="scriptCalc"></script>
 </head>
 
 <body>
@@ -27,28 +28,11 @@
                 <input type="text" id="v2">
             </li>
         </ul>
-        <button onclick="Calcular('v1','v2','operacao','saida')">Calcular</button>
-        <button onclick="limpar('v1','v2')">Limpar os valores</button>
+        <button type="button" onclick="calcular('v1','v2','operacao','saida')">Calcular</button>
+        <button type="button" onclick="limpar('v1','v2','saida')">Limpar os valores</button>
     </form>
     <p id="saida"></p>
 
 </body>
-<script>
-    Function Limpar(id1, id2){
-        document.getElementById(id1).value = '';
-        document.getElementById(id2).value = '';
-        alert("tetes");
-    }
-
-    Function Calcular(n1, n2, op, saida){
-        var num1 = document.getElementById(n1).value;
-        var num2 = document.getElementById(n2).value;
-        var oper = document.getElementById(op).options[document.getElementById(operacao).selectedIndex];
-        var expressao = num1 + oper + num2;
-        resultado = eval(expressao);
-        document.getElementById(saida).innerHTML = resultado;
-
-    }
-</script>
 
 </html>

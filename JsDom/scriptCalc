@@ -1,0 +1,16 @@
+function limpar(id1, id2, sai) {
+    document.getElementById(id1).value = '';
+    document.getElementById(id2).value = '';
+    document.getElementById(sai).innerHTML = '';
+
+}
+
+function calcular(n1, n2, op, sai) {
+    var num1 = document.getElementById(n1).value;
+    var num2 = document.getElementById(n2).value;
+    var oper = document.getElementById(op).options[document.getElementById(op).selectedIndex].value;
+    var expressao = num1 + oper + num2;
+    resultado = eval(expressao);
+    document.getElementById(sai).innerHTML = resultado;
+
+}
