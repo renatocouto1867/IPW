@@ -12,5 +12,10 @@ function calcular(n1, n2, op, sai) {
     var expressao = num1 + oper + num2;
     resultado = eval(expressao);
     document.getElementById(sai).innerHTML = resultado;
+    document.getElementById(sai).style.background='#28786C';
+    document.getElementById(sai).style.color='#FFFFFF';
+    document.getElementById(sai).style.width='200pt';
+    document.getElementById(sai).style.textAlign='center';
+
 
 }
