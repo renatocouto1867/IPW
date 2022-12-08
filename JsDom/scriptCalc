@@ -9,13 +9,36 @@ function calcular(n1, n2, op, sai) {
     var num1 = document.getElementById(n1).value;
     var num2 = document.getElementById(n2).value;
     var oper = document.getElementById(op).options[document.getElementById(op).selectedIndex].value;
-    var expressao = num1 + oper + num2;
-    resultado = eval(expressao);
-    document.getElementById(sai).innerHTML = resultado;
-    document.getElementById(sai).style.background='#28786C';
-    document.getElementById(sai).style.color='#FFFFFF';
-    document.getElementById(sai).style.width='200pt';
-    document.getElementById(sai).style.textAlign='center';
+
+    if ((num1.length < 1)||(num2.length < 1)) {
+        texto= 'O calculo não pode ser feito';
+
+    } else {
+        var expressao = num1 + oper + num2;
+        var texto;
+        resultado = eval(expressao);
+        if (oper == '+') {
+            texto = 'A soma de ' + num1 + ' e ' + num2 + ' é ' + resultado;
+        }
+
+        if (oper == '-') {
+            texto = 'A diferença entre ' + num1 + ' e ' + num2 + ' é ' + resultado;
+        }
+
+        if (oper == '*') {
+            texto = 'O produto ' + num1 + ' por ' + num2 + ' é ' + resultado;
+        }
+
+        if (oper == '/') {
+            texto = 'O quociente de ' + num1 + ' dividido por ' + num2 + ' é ' + resultado;
+        }
+        
+    }
+    document.getElementById(sai).innerHTML = texto;
+    document.getElementById(sai).style.background = '#28786C';
+    document.getElementById(sai).style.color = '#FFFFFF';
+    document.getElementById(sai).style.width = '98%';
+    document.getElementById(sai).style.textAlign = 'center';
 
 
 }
