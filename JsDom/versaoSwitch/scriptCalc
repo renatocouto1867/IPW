@@ -1,0 +1,50 @@
+function limpar(id1, id2, sai) {
+    document.getElementById(id1).value = '';
+    document.getElementById(id2).value = '';
+    document.getElementById(sai).innerHTML = '';
+
+}
+
+function calcular(n1, n2, op, sai) {
+    var num1 = document.getElementById(n1).value;
+    var num2 = document.getElementById(n2).value;
+    var oper = document.getElementById(op).options[document.getElementById(op).selectedIndex].value;
+
+    if ((!num1 || !num2)) {
+        texto = 'O calculo não pode ser feito';
+
+    } else {
+        var expressao = num1 + oper + num2;
+        var texto;
+        resultado = eval(expressao);
+        switch (oper) {
+            case '+': 
+                texto = 'A soma de ' + num1 + ' e ' + num2 + ' é ' + resultado;
+                break;
+
+            case '-':
+                texto = 'A diferença entre ' + num1 + ' e ' + num2 + ' é ' + resultado;
+                break;
+
+            case '*':
+                texto = 'O produto ' + num1 + ' por ' + num2 + ' é ' + resultado;
+                break;
+
+            case '/':
+                texto = 'O quociente de ' + num1 + ' dividido por ' + num2 + ' é ' + resultado;
+                break;
+
+            default:
+                texto = 'operador invalido';
+                break;
+        }
+
+    }
+    document.getElementById(sai).innerHTML = texto;
+    document.getElementById(sai).style.background = '#28786C';
+    document.getElementById(sai).style.color = '#FFFFFF';
+    document.getElementById(sai).style.width = '98%';
+    document.getElementById(sai).style.textAlign = 'center';
+
+
+}

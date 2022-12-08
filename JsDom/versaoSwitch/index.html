@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Simplex</title>
+    <script src="scriptCalc"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Calculadora Simplex</h1>
+    <section id="principal">
+        <form action="">
+            <ul>
+                <li>
+                    <label for="v1">Primeiro valor</label>
+                    <input type="number" id="v1">
+                </li>
+                <li>
+                    <label for="operacao">Escolha a opercação aritmética</label>
+                    <select id="operacao">
+                        <option value="+">+(adição)</option>
+                        <option value="-">-(subtração)</option>
+                        <option value="*">*(multiplicação)</option>
+                        <option value="/">/(divisão)</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="v2">Segundo valor</label>
+                    <input type="number" id="v2">
+                </li>
+            </ul>
+            <div>
+                <button type="button" onclick="calcular('v1','v2','operacao','saida')">Calcular</button>
+                <button type="button" onclick="limpar('v1','v2','saida')">Limpar os valores</button>
+            </div>
+        </form>
+        <p id="saida"></p>
+    </section>
+
+</body>
+
+</html>
