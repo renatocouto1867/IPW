@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        html {
+            font-size: 16pt;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0%;
+            border: 0%;
+        }
+
+        #janela {
+            gap: 5px;
+            border: solid 2px;
+            width: 409px;
+            border: solid 2px;
+            margin-top: auto;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: auto;
+            background-color: rgb(199, 202, 201);
+        }
+
+        #geral {
+            display: grid;
+            grid-template-areas:
+                "tela tela tela tela"
+                "tc tp tx tr"
+                "n7 n8 n9 divisao"
+                "n4 n5 n6 nMult"
+                "n1 n2 n3 nSoma"
+                "n0 n0 nPonto nSubtracao"
+                "nIg nIg nIg nIg";
+
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+
+            gap: 5px;
+            width: 400px;
+            margin-top: 5px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 5px;
+
+
+        }
+
+        .botoes {
+            height: 50px;
+            font-size: 1.2rem;
+            border-radius: 0%;
+        }
+
+        #tela {
+            grid-area: tela;
+            border: solid 1px;
+            text-align: right;
+            margin: 2px;
+            gap: 2px;
+            background-color: rgb(229, 232, 231);
+        }
+
+        #tc {
+            grid-area: tc;
+        }
+
+        #tp {
+            grid-area: tp;
+
+        }
+
+        #tx {
+            grid-area: tx;
+
+
+        }
+
+        #tr {
+            grid-area: tr;
+
+        }
+
+        #n7 {
+            grid-area: n7;
+        }
+
+        #n8 {
+            grid-area: n8;
+        }
+
+        #n9 {
+            grid-area: n9;
+        }
+
+        #divisao {
+            grid-area: divisao;
+        }
+
+        #n4 {
+            grid-area: n4;
+        }
+
+        #n5 {
+            grid-area: n5;
+        }
+
+        #n6 {
+            grid-area: n6;
+        }
+
+        #mult {
+            grid-area: nMult;
+        }
+
+        #n1 {
+            grid-area: n1;
+        }
+
+        #n2 {
+            grid-area: n2;
+        }
+
+        #n3 {
+            grid-area: n3;
+        }
+
+        #soma {
+            grid-area: nSoma;
+        }
+
+        #zero {
+            grid-area: n0;
+        }
+
+        #ponto {
+            grid-area: nPonto;
+        }
+
+        #subtracao {
+            grid-area: nSubtracao;
+        }
+
+        #igual {
+            grid-area: nIg;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="janela">
+        <section id="geral">
+            <section id="tela">
+                <p id="memoria">0,00</p>
+                <p id="calculo">0,00</p>
+            </section>
+
+
+
+            <button id="tc" class="botoes" type="button" onclick="limpar('memoria','calculo')">c</button>
+            <button id="tp" class="botoes" type="button" onclick="percentagem('calculo','memoria')">%</button>
+            <button id="tx" class="botoes" type="button" onclick="tecla('**','calculo')">x^y</button>
+            <button id="tr" class="botoes" type="button" onclick="raiz('calculo','memoria')">√</button>
+
+
+            <button id="n7" class="botoes" type="button" onclick="tecla('7','calculo')">7</button>
+            <button id="n8" class="botoes" type="button" onclick="tecla('8','calculo')">8</button>
+            <button id="n9" class="botoes" type="button" onclick="tecla('9','calculo')">9</button>
+            <button id="divisao" class="botoes" type="button" onclick="tecla('/','calculo')">÷</button>
+
+
+
+            <button id="n4" class="botoes" type="button" onclick="tecla('4','calculo')">4</button>
+            <button id="n5" class="botoes" type="button" onclick="tecla('5','calculo')">5</button>
+            <button id="n6" class="botoes" type="button" onclick="tecla('6','calculo')">6</button>
+            <button id="mult" class="botoes" type="button" onclick="tecla('*','calculo')">x</button>
+
+
+
+            <button id="n1" class="botoes" type="button" onclick="tecla('1','calculo')">1</button>
+            <button id="n2" class="botoes" type="button" onclick="tecla('2','calculo')">2</button>
+            <button id="n3" class="botoes" type="button" onclick="tecla('3','calculo')">3</button>
+            <button id="soma" class="botoes" type="button" onclick="tecla('+','calculo')">+</button>
+
+
+
+            <button id="zero" class="botoes" type="button" onclick="tecla('0','calculo')">0</button>
+            <button id="ponto" class="botoes" type="button" onclick="tecla('.','calculo')">,</button>
+            <button id="subtracao" class="botoes" type="button" onclick="tecla('-','calculo')">-</button>
+
+
+
+
+            <button id="igual" class="botoes" type="button" onclick="calcVar('calculo','memoria')">=</button>
+
+
+        </section>
+    </section>
+
+</body>
+<script>
+    var operador;
+    function limpar(mem, calc) {
+        document.getElementById(mem).innerHTML = '0,00';
+        document.getElementById(calc).innerHTML = '0,00';
+
+    }
+    function tecla(botao, calc) {
+        var teste = document.getElementById(calc).textContent;
+
+        if (teste != '0,00') {
+            teste += botao;
+        } else {
+            teste = botao;
+        }
+        document.getElementById(calc).innerHTML = teste;
+        if ((botao == '-') || (botao == '+') || (botao == '/') || (botao == '*')) {
+            operador = botao
+        }
+    }
+
+    function calcVar(calc, memoria) {
+        var teste2 = document.getElementById(calc).textContent;
+        calculo = eval(teste2);
+        document.getElementById(memoria).innerHTML = teste2 + '=';
+
+        document.getElementById(calc).innerHTML = calculo;
+    }
+
+    function raiz(calc, memoria) {
+        var teste2 = document.getElementById(calc).textContent;
+        calculo = eval(teste2);
+
+        document.getElementById(calc).innerHTML = Math.sqrt(calculo);
+        document.getElementById(memoria).innerHTML = '√' + teste2 + '=';
+    }
+    function potencia(calc) {
+        var teste2 = document.getElementById(calc).textContent;
+        calculo = eval(teste2);
+        document.getElementById(calc).innerHTML = calculo;
+
+    }
+    function percentagem(calc, memoria) {
+        const teste2 = document.getElementById(calc).textContent;
+        var tes = teste2.split(operador);
+        console.log(tes[1]);
+
+        if (operador == '*') {
+            calculo = eval(tes[0] + operador + (tes[1] / 100));
+        }
+        if (operador == '+') {
+            calculo = eval(tes[0] + operador + (tes[0] + '*' + (tes[1] / 100)));
+        }
+        if (operador == '-') {
+            calculo = eval(tes[0] + operador + (tes[0] + '*' + (tes[1] / 100)));
+        }
+
+        if (operador == '/') {
+            calculo = eval(tes[0] + operador + (tes[1] / 100));
+        }
+
+        document.getElementById(calc).innerHTML = calculo;
+        document.getElementById(memoria).innerHTML = teste2 + '%=';
+    }
+
+</script>
+
+</html>
