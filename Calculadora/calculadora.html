@@ -17,13 +17,14 @@
         #janela {
             gap: 5px;
             border: solid 2px;
-            width: 329px;
+            width: 100%;
             border: solid 2px;
             margin-top: auto;
             margin-left: auto;
             margin-right: auto;
             margin-bottom: auto;
             background-color: rgb(199, 202, 201);
+            text-align: center;
         }
 
         #geral {
@@ -40,7 +41,7 @@
             grid-template-columns: 1fr 1fr 1fr 1fr;
 
             gap: 5px;
-            width: 320px;
+            width: auto;
             margin-top: 5px;
             margin-left: auto;
             margin-right: auto;
@@ -49,10 +50,18 @@
 
         }
 
+        p {
+            margin-right: 5px;
+        }
+
         .botoes {
             height: 50px;
             font-size: 1.2rem;
             border-radius: 0%;
+        }
+
+        .botoes:hover {
+            background-color: rgb(129, 164, 214);
         }
 
         #tela {
@@ -66,6 +75,10 @@
 
         #tc {
             grid-area: tc;
+        }
+
+        #tc:hover {
+            background-color: #D91A3D;
         }
 
         #tp {
@@ -130,6 +143,7 @@
 
         #soma {
             grid-area: nSoma;
+            
         }
 
         #zero {
@@ -148,18 +162,38 @@
             grid-area: nIg;
         }
 
-        @media screen and (min-width: 500px) {
+        #igual:hover {
+            background-color: #12A61C;
+        }
+
+        @media screen and (min-width: 340px) {
             #janela {
+                width: 328px;
+            }
 
-                width: 409px;
+            #geral {
+                width: 317px;
+            }
+        }
 
+        @media screen and (min-width: 450px) {
+            #janela {
+                width: 410px;
             }
 
             #geral {
                 width: 400px;
-
             }
 
+            .botoes {
+                height: 60px;
+                font-size: 1.4rem;
+                border-radius: 1%;
+            }
+
+            #tela {
+                font-size: 1.4rem;
+            }
         }
     </style>
 </head>
@@ -174,7 +208,7 @@
 
 
 
-            <button id="tc" class="botoes" type="button" onclick="limpar('memoria','calculo')">c</button>
+            <button id="tc" class="botoes" type="button" onclick="limpar('memoria','calculo')">CE</button>
             <button id="tp" class="botoes" type="button" onclick="percentagem('calculo','memoria')">%</button>
             <button id="tx" class="botoes" type="button" onclick="tecla('**','calculo')">x^y</button>
             <button id="tr" class="botoes" type="button" onclick="raiz('calculo','memoria')">√</button>
