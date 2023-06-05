@@ -1,0 +1,239 @@
+:root {
+
+    --color-white: #fff;
+
+    --color-gray-1: #f8f9fc;
+    --color-gray-2: #f1f3f9;
+    --color-gray-3: #dee3ed;
+    --color-gray-4: #c2c9d6;
+    --color-gray-5: #8f96a3;
+    --color-gray-6: #5e636e;
+    --color-gray-7: #2f3237;
+    --color-gray-8: #1d1e20;
+    --color-gray-9: #111213;
+
+    --color-blue-1: #E3F2FD;
+    --color-blue-2: #87BCE1;
+    --color-blue-3: #46A8E1;
+    --color-blue-4: #028CDB;
+    --color-blue-5: #4285F4;
+    --color-blue-6: #0277BD;
+    --color-blue-7: #026BA8;
+    --color-blue-8: #1C455C;
+    --color-blue-9: #1C485C;
+
+
+    --color-green-1: #8FE18C;
+    --color-green-2: #4DE148;
+    --color-green-3: #0CDB04;
+    --color-green-4: #6AA868;
+    --color-green-5: #09A803;
+    --color-green-6: #078C03;
+    --color-green-7: #1F5C1D;
+    --color-green-8: #3A5C39;
+
+    --color-red-1: #EBACAF;
+    --color-red-2: #EB7272;
+    --color-red-3: #EB000C;
+    --color-red-4: #9E0008;
+    --color-red-5: #52181B;
+}
+
+
+html {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#divPrincipal{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1220px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Inicio - Janela de login*/
+#divLogin{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px var(--color-gray-5);
+}
+
+
+form {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--color-gray-3); /*#f4f4f4;*/
+    border: 2px var(--color-gray-5);
+    border-radius: var(--color-gray-5);
+}
+
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid var(--color-gray-5);
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+#divInputSenha{
+    max-width: 100%;
+    display: flex;
+    margin-left: 2px;
+}
+#inputSenha{
+    box-sizing: border-box;
+    max-width: 80%;
+}
+#botaoMostrarSenha{
+    box-sizing: border-box;
+    max-width: 20%;
+}
+#botaoEntrar {
+    background-color: var(--color-green-5);
+    color: var(--color-white);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#botaoEntrar:hover {
+    background-color: var(--color-green-7);
+}
+
+#botaoMostrarSenha{
+    background-color: var(--color-red-1);
+}
+
+#botaoMostrarSenha:hover{
+    background-color: var(--color-red-3);
+}
+
+/* Fim - Janela de login*/
+
+
+/* Estilos do menu lateral */
+
+#divMenu {
+    background-color: var(--color-blue-5);
+    color: var(--color-gray-1);
+    min-width: 20%;
+    max-width: 270px;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+
+    border-radius: 15px 0px 0px 15px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul :hover {
+    cursor:pointer;
+}
+
+nav ul li {
+    margin-bottom: 10px;
+}
+
+nav ul li a {
+    color: #FFF;
+    text-decoration: none;
+    display: block;
+    padding: 8px 12px;
+    border-radius: 20px;
+
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+
+}
+
+nav ul li ul {
+    margin-top: 5px;
+    padding-left: 20px;
+    display: none;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li ul li {
+    margin-top: 5px;
+}
+/*fim menu*/
+
+
+
+#divTela{
+    margin-left: auto;
+    margin-right: auto;
+    flex-grow: 1;
+    background-color: var(--color-gray-3);
+    border: solid 1px var(--color-blue-5);
+    border-radius: 0px 15px 15px 0px;
+
+}
+
+#divTela h1 {
+    text-align: center;
+}
+/* form pessoa*/
+#formPessoa{
+    width: auto;
+
+}
+#formPessoa input{
+    width: 100%;
+    box-sizing: border-box;
+}
+select{
+    width: 100%;
+    box-sizing: border-box;
+    height: 34px;
+    border: 1px solid var(--color-gray-5);
+    border-radius: 3px;
+    margin: 0px 0px 15px;
+    font-size: 14px;
+}
+#divCadLogin{
+    display: flex;
+    width: 100%;
+}
+#divCadLogin div{
+    width: 50%;
+}
+
+#divInpuLogin input{
+    width: 99%;
+}
+#divCadSenha input{
+    width: 78%;
+}
+
+
+/* fim Form pessoa*/
